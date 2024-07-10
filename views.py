@@ -1,38 +1,4 @@
-import subprocess
-import sys
-import os
 
-# قائمة المكتبات المطلوبة
-required_libraries = [
-    "threading",
-    "requests",
-    "ctypes",
-    "random",
-    "json",
-    "time",
-    "base64",
-    "sys",
-    "re",
-    "prettytable",
-    "colorama",
-    "urllib.parse",
-    "cloudscraper",
-    "python-cfonts"
-]
-
-# الدالة للتحقق من وجود المكتبة وتثبيتها إذا لم تكن موجودة
-def check_and_install(library):
-    try:
-        __import__(library)
-        print(f"{library} موجودة بالفعل.")
-    except ImportError:
-        print(f"{library} غير موجودة. جارٍ التثبيت...")
-        subprocess.check_call([sys.executable, "-m", "pip", "install", library])
-        print(f"{library} تم تثبيتها بنجاح.")
-
-# تحقق من كل مكتبة
-for lib in required_libraries:
-    check_and_install(lib)
 
 # تنفيذ البرنامج الرئيسي بعد التأكد من تثبيت المكتبات
 import threading
